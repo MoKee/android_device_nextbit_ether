@@ -1,5 +1,9 @@
 [
   {
+    "repository": "android_vendor_nextbit_ether",
+    "target_path": "vendor/nextbit/ether"
+  },
+  {
     "repository": "android_kernel_nextbit_msm8992",
     "target_path": "kernel/nextbit/msm8992"
   },
