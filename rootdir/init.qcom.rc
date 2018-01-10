@@ -202,9 +202,6 @@ on post-fs-data
 
     mkdir /data/misc/ipa 0700 net_admin net_admin
 
-    # Create IOP daemon dir
-    mkdir /data/misc/iop 0770 root system
-
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
     # Create the directories used by the Wireless subsystem
@@ -327,12 +324,6 @@ service perfd /system/vendor/bin/perfd
    group system
    socket perfd seqpacket 0666 root system
    writepid /dev/cpuset/system-background/tasks
-
-service iop /system/bin/iop
-    class main
-    user root
-    group root
-    writepid /dev/cpuset/system-background/tasks
 
 on property:persist.sys.ssr.restart_level=*
     start ssr_setup
@@ -535,12 +526,6 @@ service netmgrd /system/bin/netmgrd
     user root
     group root wifi wakelock radio inet
 
-service ipacm-diag /system/bin/ipacm-diag
-    class main
-    user system
-    socket ipacm_log_file dgram 660 system net_admin
-    group net_admin qcom_diag
-
 service ipacm /system/bin/ipacm
     class main
     user net_admin
@@ -628,18 +613,6 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
-
-service cnss_diag /system/bin/cnss_diag -q -f
-    class main
-    user system
-    group system wifi inet net_admin sdcard_rw media_rw diag
-    disabled
-
-on property:cnss_diag.load=true
-    start cnss_diag
-
-on property:cnss_diag.load=false
-    stop cnss_diag
 
 service cnss-daemon /system/bin/cnss-daemon -n -l
     class late_start
