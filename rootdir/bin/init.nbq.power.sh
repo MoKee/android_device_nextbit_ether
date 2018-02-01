@@ -88,7 +88,7 @@ write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "70 960000:8
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 39000
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 79000
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/ignore_hispeed_on_notif 1
-write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 633600
+write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 384000
 
 # restore A57's max
 copy /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
@@ -98,10 +98,6 @@ write /sys/devices/system/cpu/cpu5/online 1
 
 # Restore CPU 4 max freq from msm_performance
 write /sys/module/msm_performance/parameters/cpu_max_freq "4:4294967295 5:4294967295"
-
-# input boost configuration
-write /sys/module/cpu_boost/parameters/input_boost_freq "0:787200"
-write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
 # Configure core_ctl
 write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 2
