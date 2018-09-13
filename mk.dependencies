@@ -6,5 +6,9 @@
   {
     "repository": "android_device_qcom_common",
     "target_path": "device/qcom/common"
+  },
+  {
+    "repository": "android_vendor_nextbit_ether",
+    "target_path": "vendor/nextbit/ether"
   }
 ]

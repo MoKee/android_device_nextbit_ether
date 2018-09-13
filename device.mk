@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@1.0-service-legacymm
+    vendor.mokee.livedisplay@1.0-service-legacymm
 
 # Media
 PRODUCT_PACKAGES += \
@@ -262,7 +262,7 @@ PRODUCT_PACKAGES += \
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2017-04-01
+    ro.mk.build.vendor_security_patch=2017-04-01
 
 # Vibrator
 PRODUCT_PACKAGES += \
