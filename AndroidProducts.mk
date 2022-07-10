@@ -16,8 +16,8 @@
 #
 
 PRODUCT_MAKEFILES += \
-    $(LOCAL_DIR)/lineage_ether.mk
+    $(LOCAL_DIR)/mokee_ether.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_ether-userdebug \
-    lineage_ether-eng
+    mokee_ether-userdebug \
+    mokee_ether-eng
